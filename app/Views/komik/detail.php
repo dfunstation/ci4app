@@ -18,7 +18,13 @@
                             <p class="card-text"><b>Penulis : </b> <?= $detail['penulis']; ?></p>
                             <p class="card-text"><b>Penerbit : </b><?= $detail['penerbit']; ?></p>
                             <a class="btn btn-warning" href="">Edit</a>
-                            <a class="btn btn-danger" href="">Delete</a>
+
+                            <!-- <form action="/komik/<?= $detail['id_komik']; ?>" method="POST" class="d-inline">
+                                <?= csrf_field(); ?>
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button type="submit" onclick="return confirm(' Apakah anda yakin ingin menghapus data ini? ');" class="btn btn-danger ">Delete</button>
+                            </form> -->
+                            <a class="btn btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')" href="/Komik/delete/<?= $detail['id_komik']; ?>">Delete</a>
                             <br><br>
                             <a href="/komik">Kembali ke daftar komik</a>
                         </div>
